@@ -1,0 +1,148 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixin";
+
+/*---------------------------------estilos titulos------------------------*/
+h1{
+    @include title
+}
+
+h2{
+    @include title
+}
+/*------------------------estilos parrafos---------------------*/
+p{
+    color: grey;
+    font-size: 20px;
+    margin: 20px;
+    font-style: initial;
+}
+
+.parrafo-dos{
+    text-align: center;
+}
+
+.link-productos{
+    @include flex;
+      img{
+        border-radius: 8px;
+      }
+}
+/*------------------------estilos parrafos---------------------*/
+body{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: $color-body;
+}
+/*-----------------estilos header----------------*/
+header{
+    display: grid;
+    place-items: center;
+    padding: 20px 0;
+    background-color: $color-back;
+    nav{
+        ul{
+            @include list-header;
+        }
+    }
+}
+/*-----------------------estilos imagenes inicio----------------------*/
+.grid-container{
+    @include grid(grid, repeat(2, 1fr), repeat(2, 1fr), 10px, 80%, 0 auto);
+}
+
+.grid.item{
+    @include flex;
+    align-items: center;
+     img{
+        height: auto;
+        @include border;
+     }
+}
+/*----------------------estilos menu----------------------*/
+.menu{
+    @include flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 10px 0;
+    h2{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: $color-principal;
+        font-style: normal;
+        text-decoration: none;
+        font-size: medium;
+        text-align: center;
+    }
+}
+
+.menu a{
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+    a{
+        &:hover{
+            color: $color-principal;
+        }
+    }
+}
+
+.container{
+    @include flex;
+    align-items: center;
+    background-color: $color-back;
+    gap: 40px;
+    padding: 10px 0;
+}
+
+.box{
+    @include box(35px, 5px 15px, 6px);
+    @include border;
+    @include flex;
+    &:hover{
+        background-color: #555;
+        transform: scale(1.05);
+    }
+     a{
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        &:hover{
+            color: $color-principal;
+        }
+     }
+}
+
+/*---------------------estilos grid imagenes--------------------*/
+.grid-container-card{
+    @include grid(grid, repeat(3, 1fr), repeat(2, 1fr), 20px, 80%, 0 auto);
+}
+.grid-item-card{
+    @include flex;
+    align-items: center;
+    img{
+        @include border;
+        height: auto;
+    }
+}
+/*--------------------estilos footer-----------------*/
+footer{
+    font-size: small;
+    text-align: center;
+    margin-top: 60px;
+}
+/*------------------------estilos lista---------------------*/
+.lista{
+    @include lista;
+}
+/*------------------------estilos formulario---------------------*/
+.formulario{
+    @include formulario;
+}
+/*------------------------estilos contacto---------------------*/
+.form-contacto{
+    @include form;
+}
+
+
+

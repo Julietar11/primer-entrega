@@ -1,0 +1,17 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixin";
+/*-------------------estilos para desktop----------------*/
+@media (min-width:769px){
+    .container{
+        flex-direction: row;
+    }
+    
+    .box{
+        width: auto;
+        text-align: center;
+    }
+
+    .grid-container-card{
+        @include grid(grid, repeat(3, 1fr), repeat(2, 1fr), 20px, 80%, 0 auto);
+    }
+}
